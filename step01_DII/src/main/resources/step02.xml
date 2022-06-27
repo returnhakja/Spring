@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<!-- 자바코드에서 어노테이션을 사용하기 위해 추가 설정이필요한데 context로 부터 설정을 가능하게 한다 -->
+	<context:annotation-config/>
+	
+	<bean id="c1" class="step02.model.domain.Car" >
+		<property name="carNo" value="51"></property>	
+	 </bean>
+	
+	<bean id="p1" class="step02.model.domain.People">
+	<!-- <property name="myCar" ref="c1" /> -->
+	</bean>
+	
+	<!-- 같은 타입의 2가지 bean이라 못찾기 때문에 오류가 난다 -->
+	<!-- 이것을 해결하기 위해서는  -->
+	<!-- @Qualifier("c1")를 통해 2가지 이상일때 참조해야할 타입을 정해줄 수 있다 -->
+	<!-- 없는 값을 넣게 되면 오류가 뜬다 -->
+	<bean id="c2" class="step02.model.domain.Car">
+	<property name="carNo" value="52"></property>
+	</bean>
+	
+	
+	
+
+</beans>
