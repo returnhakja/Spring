@@ -13,8 +13,9 @@ public class Stoe03Test {
       ApplicationContext context = new ClassPathXmlApplicationContext("step03.xml");
       
      
-      People p1 = context.getBean("p1",  People.class);
-//      People p1 = context.getBean(People.class); id값을 주지않고 일반적으로 줄 경우에는 id값을 제외하고 타입만 매개변수로 전달하고 getbean으로 호출하면 사용가능
+//      People p1 = context.getBean("p1",  People.class);
+      People p1 = context.getBean(People.class); 
+      // id값을 주지않고 일반적으로 줄 경우에는 id값을 제외하고 타입만 매개변수로 전달하고 getbean으로 호출하면 사용가능
       
       
       System.out.println(p1);
