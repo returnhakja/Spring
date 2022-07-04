@@ -1,4 +1,4 @@
-package jpa.basic.test;
+ package jpa.basic.test;
 
 import java.util.List;
 
@@ -52,7 +52,8 @@ public class Step01Test {
 		// Member 클래스이름을 먼저 찾아서 대문자로 해주어야함
 		// 별칭도 해줘야함 (as 생략가능)
 		// * 대신 별칭을 적어줘야함
-		List<Member> allMembers = em.createQuery("select m from Member m", Member.class).getResultList();
+//		List<Member> allMembers = em.createQuery("select m from Member m", Member.class).getResultList();
+		List<String> allMembers = em.createQuery("select m.userName from Member m", String.class).getResultList();
 		System.out.println(allMembers);
 		
 		
