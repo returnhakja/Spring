@@ -1,0 +1,16 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+  <!-- <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> -->  
+  <!-- 여기있음 -->
+  <mapper namespace="com.spring.mapper.TimeMapper"> 	
+  	<select id="getTime2" resultType="String"> <!-- 쿼리를 실행할 메소드이름이 id로 들어가야한다 , 결과는 리턴타입을 적어주면 된다-->
+  		SELECT NOW()
+  	
+  	</select>
+  	
+  </mapper>
+  	
+   

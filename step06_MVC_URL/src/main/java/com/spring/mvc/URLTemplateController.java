@@ -47,7 +47,7 @@ public class URLTemplateController {
 	}
 	
 	
-	
+//	@GetMapping(value = "urlTest.do/{id}/home/{age}")
 //	public String urlTest2(@ModelAttribute String id, @ModelAttribute String age , Model model) {
 //	model.addAttribute("id" ,id);
 //	model.addAttribute("age" ,age);
