@@ -14,12 +14,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.model.Dept;
+import com.example.repository.DeptRepository;
 import com.example.service.DeptServiceImpl;
 
 @RestController
 public class DeptRestController {
 	@Autowired
 	DeptServiceImpl deptService;
+	
+	
 	
 	
 	@GetMapping(value = "/depts")
@@ -45,7 +48,7 @@ public class DeptRestController {
 	public void DepyByInsert(@RequestBody Dept dept) {
 		
 		System.out.println(dept);
-//		deptService.insertByDept(dept); 
+//		deptService.insertByDept(dept);
 	}
 	
 	// JSON 에서 3개 다 때려박는 코드
@@ -66,10 +69,7 @@ public class DeptRestController {
 //		deptService.insertByDept(dept);
 //	}
 	
-//	@PutMapping(value = "/dept/update/{deptno}")
-//	public void DepyByUpdate(@PathVariable Long deptno) {
-//		//여기서 set 해서 내용 다 바꾸고 그 dept 객체를 
-//		System.out.println(deptno);
+
 
 	
 	
@@ -81,12 +81,13 @@ public class DeptRestController {
 //		deptService.deptByUpdet(deptno);
 //		
 //	}
-	@PutMapping(value="/dept")
+	
+	@PutMapping(value="/dept/update")
 	   public void updateDept(@RequestBody Dept dept) {
 		System.out.println(dept.getDname());
 	      System.out.println(dept.getDeptno());
 
 	      deptService.deptByUpdet(dept.getDname(), dept.getDeptno());
 	   }
-	
+
 }

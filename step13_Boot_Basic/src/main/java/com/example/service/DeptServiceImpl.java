@@ -54,7 +54,6 @@ public class DeptServiceImpl implements	DeptService{
 	   public void deptByUpdet(String dname, Long deptno) {
 	      Dept dept = getDeptByDeptno(deptno);
 	      dept.setDname(dname);
-	      deptRepository.save(dept);
-	      
+	      deptRepository.save(dept);   
 	   }
 }

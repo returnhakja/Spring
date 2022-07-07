@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,19 +7,18 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.GeneratorType;
 
+import com.example.model.Dept;
+
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Data
-@Entity
-//@Getter
 //@AllArgsConstructor
 //@NoArgsConstructor
-//@ToString
-public class Dept {
+//@Builder
+public class DeptDTO {
 	
 	
 
@@ -31,4 +30,17 @@ public class Dept {
 	
 	private String loc;
 	
+	public DeptDTO(Long deptno) {
+		if(deptno != null) {
+			this.deptno = deptno;
+		}
+	}
+	
+//	public Dept dtoToEntity(DeptDTO deptDTO) {
+//		Dept deptEntity = Dept.builder()
+//				.dname(deptDTO.getDname())
+//				.loc(deptDTO.getLoc())
+//				.build()
+//				return deptEntity
+//	}
 }
