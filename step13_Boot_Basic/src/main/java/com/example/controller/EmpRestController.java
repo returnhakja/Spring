@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.model.Dept;
+import com.example.dto.EmpDTO;
+import com.example.dto.PageRequestDTO;
+import com.example.dto.PageResultDTO;
 import com.example.model.Emp;
-import com.example.service.DeptServiceImpl;
 import com.example.service.EmpServiceImpl;
 
 @RestController
@@ -25,6 +26,24 @@ import com.example.service.EmpServiceImpl;
 public class EmpRestController {
 	@Autowired
 	EmpServiceImpl EmpService;
+	
+	
+	//페이지이잉
+	@CrossOrigin(origins = {"http://localhost:3000", "https://localhost:4000"})
+	   @GetMapping(value="/emp/empspaging")
+	   public PageResultDTO<EmpDTO, Emp> getEmpAll(@RequestParam int page, @RequestParam int size ) {
+		  PageRequestDTO pageRequestDTO = PageRequestDTO.builder()
+				  .page(page)
+				  .size(size)
+				  .build();
+				  
+	      PageResultDTO<EmpDTO, Emp> pageResultDTO = EmpService.getList(pageRequestDTO);
+//	      List<EmpDTO> empList = new ArrayList<EmpDTO>();
+	      // ??
+//	      pageResultDTO.getDtoList().forEach(empDto -> empList.add(empDto));
+	      return pageResultDTO;
+	   }
+	
 	
 	@CrossOrigin(origins = {"http://localhost:3000", "https://localhost:4000"})
 	@GetMapping(value = "/Emps")
@@ -37,8 +56,6 @@ public class EmpRestController {
 	public Emp getEmpByEmpno(@PathVariable Long empno) {
 		System.out.println(empno);
 		return EmpService.getEmpByEmpno(empno);
-		
-		
 	}
 	@CrossOrigin(origins = {"http://localhost:3000", "https://localhost:4000"})
 	@DeleteMapping(value = "/emp/{empno}")
@@ -56,14 +73,14 @@ public class EmpRestController {
 		check = getEmpByEmpno(emp.getEmpno());
 		if(check == null) {
 			Emp emp1 = new Emp();
-			emp1.setEmpno(emp.getEmpno());
-			emp1.setEname(emp.getEname());
-			emp1.setJob(emp.getJob());
-			emp1.setMgr(emp.getMgr());
-			emp1.setHiredate(emp.getHiredate());
-			emp1.setSal(emp.getSal());
-			emp1.setComm(emp.getComm());
-			emp1.setDept(emp.getDept());
+//			emp1.setEmpno(emp.getEmpno());
+//			emp1.setEname(emp.getEname());
+//			emp1.setJob(emp.getJob());
+//			emp1.setMgr(emp.getMgr());
+//			emp1.setHiredate(emp.getHiredate());
+//			emp1.setSal(emp.getSal());
+//			emp1.setComm(emp.getComm());
+//			emp1.setDept(emp.getDept());
 			
 			System.out.println(emp.getDept());
 			System.out.println(emp1);

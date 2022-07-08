@@ -123,6 +123,7 @@ public class DiaryController {
 		System.out.println("=======PageRequestDTO 객체값 출력(1번 페이지에 있는 내용만)======");
 		//??
 		pageResultDTO.getDtoList().forEach(diaryDTO-> System.out.println(diaryDTO));
+		pageResultDTO.getPageList().forEach(diaryDTO -> System.out.println(diaryDTO));
 	}
 	
 	
@@ -130,6 +131,7 @@ public class DiaryController {
 	@GetMapping("/diary")
 	public void getDiary(PageRequestDTO pageRequestDTO) {
 		System.out.println(pageRequestDTO);
+		
 //		pageRequestDTO.get
 	}
 	

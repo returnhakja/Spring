@@ -1,4 +1,4 @@
-package com.spring.dto;
+package com.example.dto;
 
 import java.util.List;
 import java.util.function.Function;

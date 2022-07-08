@@ -36,6 +36,10 @@ public class DeptDTO {
 		}
 	}
 	
+	
+	
+	
+	
 //	public Dept dtoToEntity(DeptDTO deptDTO) {
 //		Dept deptEntity = Dept.builder()
 //				.dname(deptDTO.getDname())
