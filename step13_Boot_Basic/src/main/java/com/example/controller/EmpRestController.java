@@ -47,7 +47,7 @@ public class EmpRestController {
 	
 	@CrossOrigin(origins = {"http://localhost:3000", "https://localhost:4000"})
 	@GetMapping(value = "/Emps")
-	public List<Emp> getDepts(){
+	public List<Emp> getEmps(){
 		return EmpService.getEmpAll();
 	}
 	
@@ -100,4 +100,7 @@ public class EmpRestController {
 	      EmpService.empByUpdete(emp.getEmpno(), emp.getSal());
 	   }
 
+	
+		
+	
 }

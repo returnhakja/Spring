@@ -57,7 +57,7 @@ public class EmpServiceImpl implements	EmpService{
 	   }
 
 	public PageResultDTO<EmpDTO, Emp> getList(PageRequestDTO pageRequestDTO) {
-Pageable pageable = pageRequestDTO.getPageble(Sort.by("empno").descending());
+		Pageable pageable = pageRequestDTO.getPageble(Sort.by("empno").descending());
 		
 		Page<Emp> result =EmpRepository.findAll(pageable);
 		

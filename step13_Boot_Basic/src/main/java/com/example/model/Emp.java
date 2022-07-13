@@ -73,7 +73,7 @@ public class Emp implements Persistable<Long>{
    }
    
 	public EmpDTO toDTO(Emp empEntity) {
-		EmpDTO diaryDTO = EmpDTO.builder()
+		EmpDTO empDTO = EmpDTO.builder()
 				.empno(empEntity.getEmpno())
 				.ename(empEntity.getEname())
 				.job(empEntity.getJob())
@@ -82,7 +82,7 @@ public class Emp implements Persistable<Long>{
 				.sal(empEntity.getSal())
 				.comm(empEntity.getComm())
 				.build();
-		return diaryDTO;
+		return empDTO;
 	}
 
 
